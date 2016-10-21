@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "# plot likelihood curve----\nn <- 10 # set total trials\nx <- 0 # set successes\ntheta <- seq(0, 1, len = 100) # create theta variable, from 0 to 1\nlike <- dbinom(x, n, theta) # create likelihood function\nplot(theta, like, type = 'l', xlab = expression(theta), ylab = 'Likelihood', \n   main = \"Likelihood Curve\")\n\n# theta = probability of landing on heads\n# like = likelihood of the given probability being the true one\n\n# Q1: Let’s assume you expect this is a fair coin. What is the binomial probability of\n# observing 8 heads out of 10 coin flips, when θ = 0.5?\ndbinom(8, 10, 0.5)\n#> [1] 0.04394531\n\n# maximum likelihood estimation = plot likelihood against all possible values of theta\n# likelihood has little meaning in isolation, only relative to other likelihoods\n\n# Probability: start with parameter and estimate probability of specific sample\n#     param = probability coin is fair\n#     sample = n heads out of y flips\n# Likelihood: start with specific sample and estimate likelihood of different parameters\n#     param = probability coin is fair\n#     sample = n heads out of y flips\n\n# Likelihood = observe some data and use it to infer likelihood of different parameters\n# Likelihood functions don't have to be binomial, can be from many distributions\n\n# Q2: likelihood curve with observed data of 0 heads out of 10 flips\n# C) The curve starts at its highest point at θ = 0, and then the likelihood decreases as θ increases.\n\n# Likelihood ratio: likelihood at given value of theta divided by likelihood at other value of theta\n\n\n# Calculate the likelihood ratio----\nn <- 13 # set total trials\nx <- 8 # set successes\nH0 <- .5 #specify one hypothesis you want to compare with the likihood ratio\nH1 <- 0/13 #specify another hypothesis you want to compare with the likihood ratio (you can use 1/20, or 0.05)\ndbinom(x,n,H0)/dbinom(x,n,H1) #Returns the likelihood ratio of H0 over H1\ndbinom(x,n,H1)/dbinom(x,n,H0) #Returns the likelihood ratio of H1 over H0\n\ntheta<- seq(0,1,len=100) #create theta variable, from 0 to 1\nlike <- dbinom(x,n,theta)\n#png(file=\"LikRatio.png\",width=4000,height=3000, , units = \"px\", res = 900)\nplot(theta,like,type='l',xlab=expression(theta), ylab='Likelihood', lwd=2)\npoints(H0,dbinom(x,n,H0))\npoints(H1,dbinom(x,n,H1))\nsegments(H0, dbinom(x,n,H0), x/n, dbinom(x,n,H0), lty=2, lwd=2)\nsegments(H1, dbinom(x,n,H1), x/n, dbinom(x,n,H1), lty=2, lwd=2)\nsegments(x/n, dbinom(x,n,H0), x/n, dbinom(x,n,H1), lwd=2)\ntitle(paste('Likelihood Ratio H0/H1:',round(dbinom(x,n,H0)/dbinom(x,n,H1),digits=2),\" Likelihood Ratio H1/H0:\",round(dbinom(x,n,H1)/dbinom(x,n,H0),digits=2)))\n#dev.off()",
+    "created" : 1476830341364.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2863269993",
+    "id" : "1441C34E",
+    "lastKnownWriteTime" : 1476831609,
+    "last_content_update" : 1476831609371,
+    "path" : "H:/Courses/Statistical inference - Coursera/hw2.R",
+    "project_path" : "hw2.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
