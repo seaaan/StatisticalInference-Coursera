@@ -1,0 +1,73 @@
+Type 1 error rate = maximum probability of saying there is something when there is nothing
+Positive predictive value = post-study probability that a significant finding is true 
+	* Percentage of all positives that are false positives (not of all studies)
+
+	Example: 200 studies, 50% examine a true effect, 80% power, alpha = 0.05
+
+											H0 true				H1 true
+						Significant 		5%*50%=2.5% 		80%*50%=40%
+											5 studies 			80 studies
+						Non-significant		95%*50%=47.5%		20%*50%=10%
+											95 studies 			20 studies
+		So there are 85 significant (positive) results. 5 are false positives = 5.8%
+			However, out of ALL studies (200), again only 5 are false positives = 2.5%, less than alpha
+
+Q1: We see that we control the Type 1 error rate at 5% by using an alpha of 0.05. Still, the
+Type 1 error rate turns out to be much lower, namely 2.5%, or 0.025. Why?
+
+A) The Type 1 error rate is a variable with a distribution around the true error rate –
+sometimes it’s higher, sometimes it’s lower, due to random variation.
+
+*B)* The Type 1 error rate is only 5% when H0 is true for all 200 studies.
+
+C) The Type 1 error rate is only 5% when you have 50% power – if power increases above
+50%, the Type 1 error rate becomes smaller.
+
+D) The Type 1 error rate is only 5% when you have 100% power, and it becomes smaller
+if power is lower than 100%.
+
+App for calculating outcomes given various levels of power, pre-study odds of true effect, p hacking
+http://shinyapps.org/apps/PPV/
+
+Q2: First, let’s just look at the probability that you will find a true positive (which is often
+a goal in research). What will make the biggest difference in improving the probability
+that you will find a true positive? Check your ideas by shifting the sliders
+	*A)* Increase the % of a-priori true hypotheses
+	B) Decrease the % of a-priori true hypotheses
+	C) Increase the alpha level
+	D) Decrease the alpha level
+	E) Increase the power
+	F) Decrease the power
+
+Q3: Set the “% of a priori true hypotheses” slider to 50%. Leave the ‘α level’ slider at 5%.
+Leave the ‘% of p-hacked studies’ slider at 0. The title of Ioannidis’ paper is ‘why most
+published research findings are false’. One reason might be that studies often have low
+power. At which value for power is the PPV 50%. In other words, at which level of power
+is a significant result just as likely to be true, as that it is false?
+	A) 80%
+	B) 50%
+	C) 20%
+	*D)* 5%
+
+Power has more effect on making you miss positive results (i.e. increases false negatives) than on making your claimed significant findings false
+
+Q4: In general, when are most published findings false? Interpret ‘low’ and ‘high’ in the
+answer options below in relation to the values in the first example in this assignment of
+50% probability H1 is true, 5% alpha, 80% power, and 0% bias.
+	*A)* When the probability of examining a true hypothesis is low, combined with either low
+	power or substantial bias (e.g., p-hacking).
+	B) When the probability of examining a true hypothesis is high, combined with either low
+	power or substantial bias (e.g., p-hacking).
+	C) When the alpha level is high, combined with either low power or substantial bias (e.g.,
+	p-hacking).
+	D) When power is low and p-hacking is high (regardless of the % of true hypotheses one
+	examines).
+
+Q5: Set the “% of a priori true hypotheses” slider to 0%. Set the “% of p-hacked studies”
+slider to 0%. Set the “α level” slider to 5%. Play around with the power slider. Which
+statement is true? Without p-hacking, when the alpha level is 5%, and when 0% of the
+hypotheses are true, ____
+	A) the Type 1 error rate is 100%.
+	B) the PPV depends on the power of the studies.
+	C) regardless of the power, the PPV equals the Type 1 error rate.
+	*D)* regardless of the power, the Type 1 error rate is 5%, and the PPV is 0%.
