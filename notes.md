@@ -407,3 +407,77 @@ Components of a preregistration
 
 Preregistration has the benefit of allowing you to improve your study design before doing the study, unlike with traditional peer review
 Also allows less conventional but more efficient designs (e.g. one-sided tests, multiple looks for stopping, both of which are more convincing if you state the prediction in advance)
+
+# Week 4: Effect sizes
+
+Suggested reading: 
+Grissom, R. J., & Kim, J. J. (2012). Effect sizes for research: univariate and multivariate applications (2nd ed). New York: Routledge.
+
+The book by Cumming (2013) mentioned earlier has excellent discussions on effect sizes (primarily focusing on Cohen’s d).
+
+Cumming, G. (2013). Understanding the new statistics: Effect sizes, confidence intervals, and meta-analysis. Routledge.
+
+I’ve written a practical primer on effect sizes, which you can find here:
+
+Lakens, D. (2013). Calculating and reporting effect sizes to facilitate cumulative science: a practical primer for t-tests and ANOVAs. Frontiers in Psychology, 4. http://doi.org/10.3389/fpsyg.2013.00863
+
+Another practical introduction, focusing on contrasts, is provided by:
+
+Rosnow, R. L., & Rosenthal, R. (2009). Effect Sizes: Why, When, and How to Use Them. Zeitschrift Für Psychologie / Journal of Psychology, 217(1), 6–14. http://doi.org/10.1027/0044-3409.217.1.6
+
+An accessible book-level treatment of the topic can be found in:
+
+Ellis, P. D. (2010). The essential guide to effect sizes: statistical power, meta-analysis, and the interpretation of research results. Cambridge ; New York: Cambridge University Press.
+
+Effect sizes: 
+	* Communicate practical significance of results (differentiate statistical significance from practical significance)
+	* Calculate meta-analytic conclusions by combining results of multiple studies
+	* Allow you to perform power analyses
+
+Unstandardized effect sizes: just the difference between the groups
+Standardized effect sizes: eg if you measure happiness on a scale of 1-7 and another group uses 1-5, then a value of 4 means different things in each case, so you can more effectively compare the two studies by calculating a standardized effect size
+
+Families of effect sizes: 
+	* d family = standardized effect sizes
+	* r family = measures of association
+
+## Lecture 4.2: Cohen's d
+Standardized mean differences in terms of standard deviation
+Difference in means between groups divided by the standard deviation, so a mean difference equal to the standard deviation gives d = 1
+	0 = no effect
+	∞ = colossal effect
+
+One benchmark: 
+	0.2 = small
+	0.5 = medium
+	0.8 = large
+	- Even at 0.8, the groups will overlap considerably
+
+Variations of Cohen's d: 
+	within subject, correlated within, etc.
+	Lakens 2013 article about slightly different version of Cohen's d for different situations
+
+Hedges' g: unbiased version of Cohen's d, which is d multiplied by a correction factor that depends on the sample size. Otherwise Cohen's d slightly overestimates the effect size
+
+Cohen's d can be calculated from t and n, so you can calculate it even if it's not reported
+
+## Lecture 4.3: Correlations
+Benchmarks for r
+	0.1 small
+	0.3 medium
+	0.5 large
+
+Range: -1 to 1
+
+d can be converted to r and vice versa
+
+R^2 and eta^2 represent the proportion of total variance explained by an effect from regression and anova
+omega^2 and epsilon^2 are less biased versions of these factors
+
+epsilon^2 is the least biased (Okada 2013)
+
+Conceptually, what do they mean? How much does the relationship between x and y decrease the error between them
+Cohen's f can be calculated from eta^2
+
+Subscript p of each of the factors above is useful for experiments where you're only interested in the effect of one variable on explaining variation
+	"partial eta squared" vs "eta squared"
