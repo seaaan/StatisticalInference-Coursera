@@ -481,3 +481,91 @@ Cohen's f can be calculated from eta^2
 
 Subscript p of each of the factors above is useful for experiments where you're only interested in the effect of one variable on explaining variation
 	"partial eta squared" vs "eta squared"
+	
+## Week 5
+
+### Suggested readings
+Lecture 5.1
+
+A very complete and accessible explanation of confidence intervals can be found in the two articles below:
+
+Cumming, G., & Finch, S. (2001). A Primer on the Understanding, Use, and Calculation of Confidence Intervals that are Based on Central and Noncentral Distributions. Educational and Psychological Measurement, 61(4), 532–574. http://doi.org/10.1177/0013164401614002
+
+Cumming, G., & Fidler, F. (2009). Confidence Intervals: Better Answers to Better Questions. Zeitschrift Für Psychologie / Journal of Psychology, 217(1), 15–26. http://doi.org/10.1027/0044-3409.217.1.15
+
+Some criticisms on Frequentist confidence intervals from a Bayesian perspective can be found in:
+
+Morey, R. D., Hoekstra, R., Rouder, J. N., Lee, M. D., & Wagenmakers, E.-J. (2016). The fallacy of placing confidence in confidence intervals. Psychonomic Bulletin & Review, 23(1), 103–123.
+
+Lecture 5.2
+
+An excellent introduction to sample size planning is provided by Maxwell and colleagues:
+
+Maxwell, S. E., Kelley, K., & Rausch, J. R. (2008). Sample Size Planning for Statistical Power and Accuracy in Parameter Estimation. Annual Review of Psychology, 59(1), 537–563. http://doi.org/10.1146/annurev.psych.59.103006.093735
+
+To learn more about power and power analysis, the go-to book is Cohen:
+
+Cohen, J. (1988). Statistical power analysis for the behavioral sciences (2nd ed). Hillsdale, N.J: L. Erlbaum Associates.
+
+If you start to use G*power for sample size planning based on power analysis, read:
+
+Faul, F., Erdfelder, E., Lang, A.-G., & Buchner, A. (2007). G* Power 3: A flexible statistical power analysis program for the social, behavioral, and biomedical sciences. Behavior Research Methods, 39(2), 175–191.
+
+Lecture 5.3
+
+If you want to learn about using p-curve analysis in more detail, read the article introducing the technique. Definitely read it carefully before performing and interpreting your first p-curve analysis.
+
+Simonsohn, U., Nelson, L. D., & Simmons, J. P. (2014). P-curve: A key to the file-drawer. Journal of Experimental Psychology: General, 143(2), 534.
+
+A highly related statistical technique, p-uniform, is described here:
+
+van Assen, M. A. L. M., van Aert, R. C. M., & Wicherts, J. M. (2015). Meta-analysis using effect size distributions of only statistically significant studies. Psychological Methods, 20(3), 293–309. http://doi.org/10.1037/met0000025
+
+### Lecture 5.1: Confidence intervals
+
+When you generalize from a sample to the population, there is always uncertainty, which needs to be reported to allow interpretation of the point estimate of the effect. 
+
+95% confidence intervals = percentage of future confidence intervals that would contain the true parameter value 
+   i.e. 95% of the confidence intervals calculated in this way will capture the true parameter value
+   A single confidence interval either contains the population parameter or it doesn't
+   - It's the mean +/- (a critical value multiplied by the standard error)
+      The critical value is determined by the percentage you want (1.96 for 95%)
+   - It doesn't mean that 95% of future estimates will fall within the confidence interval you calculated. A confidence interval is a statement about future confidence intervals, not about future estimates.
+   - Capture percentage: percentage of subsequent estimates that will fall within a given CI. I.e. you have calculated your estimate and CI, if you did a bunch more studies, what percentage of the future estimates would fall in your CI? (it averages 84.3% of the time for a 95% CI based on simulation) 95% of future CIs will contain the true population parameter, capture percentage is about what percentage of future estimates will be inside your current CI. Capture percentage is 95% only when your estimate happens to be exactly the population value.
+   If a confidence interval doesn't contain zero, -> p < 0.05
+
+Bayesian statistics: credible intervals or highest density intervals
+   - 95% credible interval = all values you find most plausible (quantifying your belief)
+
+### Lecture 5.2: Sample size justification
+
+Small samples have large variation, more type 2 errors (false negatives) and inaccurate estimates of the population value
+
+Cool graph from Schonbrodt and Perugini where they calculated an effect size after each participant of a 150 person study and compared it to simulated versions of the same study and show how the effect size becomes more reliable as the study size increases
+
+Approaches to sample size estimation: 
+   * Plan for accuracy (design the study based on the width of the CIs you want for the estimate)
+   * Plan for statistical power (design the study to have a certain probability of finding p < 0.05)
+      * for a d = 0.5 you need to do 50 people per group for 80% power
+      * Estimating expected effect sizes based on the literature requires caution due to publication biase
+      * When you don't have good estimates of expected effect sizes, use sequential analysis
+   * Plan for feasibility (design the study based on resources available)
+
+Bayesian statistics doesn't require declaring sample size in advance
+   * Much more flexible, but lacks an easy way to control type 1 errors
+
+### Lecture 5.3: P-curve analysis
+
+Meta-analytic tool to judge the evidential value of sets of studies in the literature
+No true effect -> uniform p-value distribution
+True effect ----> depends on statistical power of the test, but expect a right skew, with small p-values being more likely than higher ones
+
+P curve analysis: test whether a set of p-values contains strong evidence. Test only performed on studies with p < 0.05, which helps account for publication bias. Compares whether the p-value distribution looks more uniform or whether small p-values are more likely than higher ones
+
+p-curve.com allows you to perform the tests online
+
+Question: does the p-value distribution look like one with or without an effect? 
+   Typically compare it to a null-distribution of no effect (uniform) or a distribution of real effect with low power, say 33%
+
+P-curve analysis cannot prove whether an effect is real or not, but gives you an indication of how strong the current evidence is
+   * "A theory might still be true, the data just don't provide evidence for the theory"
