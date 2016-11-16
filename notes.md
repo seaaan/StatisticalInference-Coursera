@@ -617,3 +617,63 @@ McGuire, W. J. (2004). A Perspectivist Approach to Theory Construction. Personal
 An excellent, must-read article on theory construction by Klaus Fiedler is:
 
 Fiedler, K. (2004). Tools, toys, truisms, and theories: Some thoughts on the creative cycle of theory formation. Personality and Social Psychology Review, 8(2), 123–131.
+
+## Philosophy of science
+
+"If a theory is falsifiable, then it is scientific." -Popper
+"A given fact is explained scientifically only if a new fact is predicted with it." -Lakatos
+
+Modus tollens ("denying the consequent"): 
+   if p then q
+   not p
+   therefore not q
+   
+   if theory then data
+   not data
+   therefore not theory
+
+Affirming the consequent -> illogical, but tempting!
+   if p then q
+   q 
+   therefore p
+
+A theory can be refuted or corroborated, but never proven. 
+When inferences are based on statistics, falsifications are not black and white. 
+   
+Rejecting a theory based on falsifying evidence   
+   * We also often don't reject a theory based on a single falsification
+   * Often need a better, alternative theory to replace a current theory which is somewhat useful
+   * To some extent, you may be falsifying _other_ theories rather than your main theory (such as assumptions about data collection, experimental method, etc.)
+   ** I.e. you have a core theory, surrounded by associated theories that may be falsified without actually falsifying your core theory
+   ** However, attaching new conditions to your core theory every time you do an experiment is the sign of a degenerative research line, where you're just trying to keep your theory alive, since your theory isn't making new and valid predictions
+   
+Kuhn believes that you can't have objective science, where all observations are theory-laden and practicitioners of different theories work in different worlds
+   * Science progresses with periodic revolutions that upend everything that came before
+   
+More modern view:
+   Public avenues for criticism, shared standards, open to reevaluation, equality 
+   
+## The null is always false
+
+With large enough samples, the null is always false. 
+
+Random assignment = reasonable place to use the null hypothesis
+   * Assuming you randomly assign subjects to two groups and the only difference is your intervention, then the null hypothesis is a very reasonable assumption to test against
+   
+Measured variables
+   * Instead of randomizing people to groups, your groups are natural, such as gender
+   * Since you can't randomly assign people to gender, the null hypothesis is a less reasonable assumption because there are likely some true effects of natural groups or other things that vary in association with , they may just be very small
+   * Systematic noise ("crud factor") is present in most data and not necessarily related to the dependent variable = true effects you're not interested in
+   
+After randomization, the null is a useful model, but without randomization, it is not a very useful model because there very often is an effect and rejecting the null hypothesis has little bearing on your theory
+   * The null hypothesis is a weak hypothesis without randomization and rejecting it is not impressive
+   * It is more impressive to match a specific prediction than reject the null hypothesis by showing ANY effect
+   * Confirming strong hypotheses is more useful for supporting a theory
+   * Rather than rejecting the null hypothesis, better to compare two hypotheses
+
+Confirmation bias = systematic bias in inductive reasoning 
+
+But what experiment could disprove your hypothesis?
+   
+   
+   
