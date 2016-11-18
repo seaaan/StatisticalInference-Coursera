@@ -82,3 +82,96 @@
 # and a desired power of 0.9 (or 90%), and assuming a true effect size of 0, how many
 # participants would you need in each group? 
 #> 2165
+
+# Bayesian approach
+# Point prior = a prior of a single point estimate, rather than the usual distribution
+
+#This code is for a one-sided t-test, testing a difference against 0.
+
+N <- 100 #Enter sample size
+dz <- -0.015 #Enter Cohen's dz effect size observed in the dependent t-test or one-sided t-test
+
+dz_prior <- 0.09 #Enter effect size dz for the prior 
+sd_prior <- 0.2 #Enter sd of the effect sizes of the prior - the higher, the wider the prior is
+
+lo <- -Inf #lower bound of support (e.g., set to 0 if effects < 0 is not possible)
+hi <- Inf #upper bound of support
+
+#specify prior
+altDens=function(delta) 
+   dnorm(delta,dz_prior,sd_prior)*as.integer(delta>lo)*as.integer(delta<hi)
+#Normalize alternative density in case user does not, 
+K=1/integrate(altDens,lower=lo,upper=hi)$value
+f=function(delta) K*altDens(delta)
+
+delta=seq(-3,3,.01)
+#Plot Alternative as a density and Null as a point arrow
+#png(file=paste('prior.png'),width=6000,height=4000, res = 1000)
+maxAlt=max(f(delta))
+plot(delta,f(delta),typ='n',xlab="Effect Size Parameter Delta",ylab="Density",ylim=c(0,1.4*maxAlt),main="Models")
+arrows(0,0,0,1.3*maxAlt,col='darkblue',lwd=2)
+lines(delta,f(delta),col='darkgreen',lwd=2)
+legend("topright",legend=c("Null","Alternative"),col=c('darkblue','darkgreen'),lwd=2)
+#dev.off()
+
+#Prediction Function Under Null
+nullPredF=function(obs,N) dt(sqrt(N)*obs,N-1)
+
+#Prediction Function Under the Alternative
+altPredIntegrand=function(delta,obs,N) 
+   dt(sqrt(N)*obs,N-1,sqrt(N)*delta)*f(delta)
+altPredF=function(obs,N) 
+   integrate(altPredIntegrand,lower=lo,upper=hi,obs=obs,N=N)$value
+
+obs=delta
+I=length(obs)
+nullPred=nullPredF(obs,N)
+altPred=1:I
+for (i in 1:I) altPred[i]=altPredF(obs[i],N)
+
+#Evaluate Predicted Density at Observed Value dz
+valNull=nullPredF(dz,N)
+valAlt=altPredF(dz,N)
+
+#Plot The Predictions
+#png(file=paste('posterior.png'),width=6000,height=4000, res = 1000)
+top=max(altPred,nullPred)
+plot(type='l',obs,nullPred,ylim=c(0,top),xlab="Observed Effect Size",ylab="Density",main=paste("Bayes factor (alt/null) is ",round(valAlt/valNull,digits =3)),col='darkblue',lwd=2)
+lines(obs,altPred,col='darkgreen',lwd=2)
+legend("topright",legend=c("Null","Alternative"),col=c('darkblue','darkgreen'),lwd=2)
+abline(v=dz,lty=2,lwd=2,col='red')
+points(pch=19,c(dz,dz),c(valNull,valAlt))
+#dev.off()
+
+cat("Bayes factor (alt/null) is ",valAlt/valNull,", the t-value is ",sqrt(N)*dz," and the p-value is",2*(1-pt(abs(sqrt(N)*dz),N-1)))
+
+# Q6) In line 5, change the observed effect size to -0.015. Run the code, using the same
+# prior. What can we conclude? The title of the figure provides the Bayes Factor for the
+# alternative over the null (BF10). Remember that a Bayes Factor of 1 means both models
+# are equally likely – values smaller than BF10 = 1 mean the null hypothesis is more likely.
+# You can reverse the BF10 to reflect how much more likely the null is compared to the
+# alternative (BF01) by computing 1/BF. When the Bayes factor is smaller than 0.333 or larger
+# than 3, the Bayes Factor can be interpreted as modest support. When the Bayes factor is
+# smaller than 0.1 or larger than 10 the Bayes Factor can be interpreted as strong support.
+# When the Bayes factor falls within the 0.333 to 3 range, it is considered too weak support
+# for either hypothesis to draw a conclusion on the data.
+
+# The Bayes factor is 0.147; convert it to Bayes factor in favor of the null and
+# get 1/0.147 = null is 6.8 times more likely than alternative
+
+# A) The alternative model is more likely than the null model, with a BF10 of 0.147
+# B) The alternative model is more likely than the null model, with a BF10 of 14.70
+# *C)* The null model is more likely than the alternative model, with a BF10 of 0.147
+# D) The null model is more likely than the alternative model, with a BF10 of 14.70
+
+# Q7) In line 7, change the prior to an effect size of dz_prior = 0.09. Given this prior, can we
+# still conclude that the Bayes Factor provides support for the null model for the remaining
+# conditions, where the statistical test was t(99) = -0.15, dz = -0.015?
+# A) With a BF10 = 7.365, the data now actually provide support for the alternative model,
+# compared to the null model. 
+# B) With a BF10 = 0.405, we can no longer conclude the data provide support for the null
+# model, compared to the alternative model.
+# *C)* With a BF10 = 0.405, the data provide support for the null model, compared to the
+# alternative model. 
+
+# Now the support for the null model is 1/0.405 = 2.47 times more likely
