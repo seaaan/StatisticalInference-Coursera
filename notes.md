@@ -675,5 +675,100 @@ Confirmation bias = systematic bias in inductive reasoning
 
 But what experiment could disprove your hypothesis?
    
-   
-   
+### Lecture 6.3: Theory construction   
+
+Theory   <--->    Statistical hypothesis  <--->    Data
+      corroboration                      inference
+      (theoretician)                     (statistician)
+
+Scientific theory = set of testable statements about the relation between observations
+
+Theory generation: 
+   * Thought experiments
+   * Personal experiences
+   * Put yourself in someone else's shoes and ask what drives their behavior
+   * Observation
+   * Use metaphors
+   * Ask why and how
+   * Have broad interests and be inspired by other disciplines and culture
+
+Theory formalization: 
+   * Use words, figures, numbers
+   * Define the boundary conditions of the effect (when would the opposite of your prediction be true)
+
+Scientific cycle:
+   * Loosening stage  = hypothesis generation
+      What would a theory really imply?
+      Play around with methods/assays and data
+      Simulate data or explore datasets
+   * Tightening state = hypothesis testing
+      Determine whether the hypothesis is correct or not
+
+## Week 7: Open science, replication, and publication bias
+Lecture 7.1
+
+An excellent overview of what replication is, why we should do it, is provided by:
+
+Schmidt, S. (2009). Shall we really do it again? The powerful concept of replication is neglected in the social sciences. Review of General Psychology, 13(2), 90–100. http://doi.org/10.1037/a0015108
+
+A practical approach to designing replication studies is provided by:
+
+Brandt, M. J., Ijzerman, H., Dijksterhuis, A., Farach, F. J., Geller, J., Giner-Sorolla, R., … Van’t Veer, A. (2014). The replication recipe: What makes for a convincing replication? Journal of Experimental Social Psychology, 50, 217–224.
+
+An explanation of why replication studies are important, but not rewarded enough in science, is provided in:
+
+Koole, S. L., & Lakens, D. (2012). Rewarding Replications A Sure and Simple Way to Improve Psychological Science. Perspectives on Psychological Science, 7(6), 608–614. http://doi.org/10.1177/1745691612462586
+
+
+Lecture 7.2
+
+The classic paper on the file-drawer problem by Rosenthal is:
+
+Rosenthal, R. (1979). The file drawer problem and tolerance for null results. Psychological Bulletin, 86(3), 638.
+
+Another classic excellent paper, which also contains some empirical data, is published by Greenwald:
+
+Greenwald, A. G. (1975). Consequences of prejudice against the null hypothesis. Psychological Bulletin, 82(1), 1.
+
+A good introduction to publication bias can be found in:
+
+Ferguson, C. J., & Heene, M. (2012). A vast graveyard of undead theories publication bias and psychological science’s aversion to the null. Perspectives on Psychological Science, 7(6), 555–561.
+
+An empirical examination of publication bias can be found in:
+
+Fanelli, D. (2012). Negative results are disappearing from most disciplines and countries. Scientometrics, 90(3), 891–904. http://doi.org/10.1007/s11192-011-0494-7
+
+A funny satirical piece, responding both the the article by Daryl Bem, and the article by Wagenmakers et al recommended for Lecture 2.2, is:
+
+Bones, A. K. (2012). We Knew the Future All Along Scientific Hypothesizing is Much More Accurate Than Other Forms of Precognition—A Satire in One Part. Perspectives on Psychological Science, 7(3), 307–309. http://doi.org/10.1177/1745691612441216
+
+
+Lecture 7.3
+
+An article discussing how open science can lead to a scientific utopia is:
+
+Nosek, B. A., & Bar-Anan, Y. (2012). Scientific Utopia: I. Opening Scientific Communication. Psychological Inquiry, 23(3), 217–243. http://doi.org/10.1080/1047840X.2012.692215
+
+An article discussing how peer reviewers can promote open science is here:
+
+Morey, R. D., Chambers, C. D., Etchells, P. J., Harris, C. R., Hoekstra, R., Lakens, D., … others. (2016). The Peer Reviewers’ Openness Initiative: incentivizing open research practices through peer review. Royal Society Open Science, 3(1), 150547.
+
+### Lecture 7.1 replications
+
+There is no such thing as an exact replication. 
+
+Direct replication = try to keep everything as similar as possible (replicate finding)
+Conceptual/theoretical replication = trying to test same underlying hypothesis in a new way (replicate theory)
+
+Goal 1: Identify type 1 errors
+Goal 2: Control artifacts (lack of internal validity, e.g. depends on that one bottle of buffer in your lab)
+Goal 3: Generalize to new populations
+Goal 4: Verify underlying hypothesis
+
+Failed replication != untrue theory
+
+Troubling trio = low power, high p-value, surprising result; study to be skeptical of
+
+Metascience/collaborative multi-lab replications are especially valuable
+
+In addition to replication, it's a good idea to add an extension (something else)
