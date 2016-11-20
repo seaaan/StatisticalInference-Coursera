@@ -2,7 +2,7 @@
 The data was downloaded using the OMDb API, via the omdbapi package in R on November 19, 2016. The exact script used to download the data is available in the "get-the-data.R" file. 
 
 ## Data structure
-The data file consists of three columns and 1000 rows. Each row is a single movie and is described with its title, IMDB rating, and director. The ratings are on a scale of 1 to 5 and title and director contain free text, with commas in the director column demarcating multiple directors. 
+The data file consists of three columns and 1000 rows. Each row is a single movie and is described with its title, IMDB rating, and director. The ratings are on a scale of 1 to 10 and title and director contain free text, with commas in the director column demarcating multiple directors. 
 
 ## Citations
 OMDB API: https://www.omdbapi.com/
