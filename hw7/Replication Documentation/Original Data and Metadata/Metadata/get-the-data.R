@@ -26,8 +26,8 @@ get_ten <- function(ten) {
 get_n_pages <- function(n) {
    bind_rows(lapply(1:n, function(page) {
       bind_rows(
-         get_ten(search_by_title("and", page = n)),
-         get_ten(search_by_title("or", page = n))
+         get_ten(search_by_title("and", page = page)),
+         get_ten(search_by_title("or", page = page))
       )
    }))
 }
