@@ -772,3 +772,65 @@ Troubling trio = low power, high p-value, surprising result; study to be skeptic
 Metascience/collaborative multi-lab replications are especially valuable
 
 In addition to replication, it's a good idea to add an extension (something else)
+
+### Lecture 7.2 Publication bias
+
+Experiments not published due to publication bias if p-value is less than 0.05
+   * Most published findings support the hypothesis (>90% in psychology)
+
+Reasons for lack of publication
+   * Null results are difficult to interpret (no effect? badly done study?)
+
+It's possible to have hundreds of published studies with p < 0.05 and there still not to be a true effect (thousands of researchers working on the same study)
+
+Metaanlaysis cannot correct publication bias but it can find it
+   * Funnel plot: y-axis = inverted standard error (high = large sample size, low = small sample size)
+                  x-axis = effect size
+                  Typically observe a pyramid with larger effect sizes (in both directions) at lower sample sizes
+                  There will be a gray pyramid centered on effect size of 0 representing non-significant studies
+                  Publication bias can be observed in a skewed distribution of actual studies with many just on the significant side and an underrepresentation of non-significant findings
+   * Trim and fill analysis: look at skewed distribution and assume the existence of a bunch of studies that were non-significant
+      This will generate an adjusted effect size
+   * Cumulative meta-analysis: start with the biggest studies and only look at effect size estimate after looking at very large ones
+   * Failsafe N: calculate how many studies you would need with no real effect (i.e. how many unpublished studies) for the effect size to be reduced to 0. This is not a recommended method
+   * Meta-regression techniques (e.g. Egger's regression): endpoint of regression line (where standard error = 0) can be estimate of true effect size
+
+Expect non-significant studies! 
+   * Four studies with 80% power: probability of 100% significant is 0.8*0.8*0.8*0.8 = 0.41 = 41% chance of only significant results even if there is a true effect
+   * At least discuss them in the discussion and share the data in the supplement, even if you don't give a full treatment in the results
+
+### Lecture 7.3 Open science
+Open science = access to publications, data, matericals, peer review, educational resources, software
+
+Open access to publications
+   * Gold  open access = research/university pay to provide access
+   * Green open access = a version of the publication (eg preprint, post print) is available
+      SHERPA/RoMEO shows you if you can share pre-print/post-print/publisher's version given a certain journal
+   * Sci-Hub           = illegal service for access to all publications
+
+Open access to data
+   * Makes science more reproducible
+   * Allows generation of other hypotheses
+   * Data are supposed to be stored and available on request
+   * Depositing the data in a public repository helps ensure longevity of the data
+   * Advice: add comments to code or other analysis system
+   * Advice: add names to the data and keep records of what it means
+   * Ideally provide a pipeline from raw data to analytic data to results, figures, and tables
+
+Open access to materials
+   * Makes science more efficient by allowing other people to use them to build on or extend your findings
+
+Badges can be used to make these issues more visible
+
+Open access to peer review
+   * More transparency
+
+Open access to software
+   * Makes data and analyses more available and accessible
+   * Allows people to do analysis even if they don't have resources to purchase commercial software
+
+Disclosure of conflicts of interest is important
+Competition can be a counter-incentive to open science principles since some people feel they will not benefit by sharing
+
+Publish studies regardless of significance by doing a pre-registered study, acceptable in some journals 
+
